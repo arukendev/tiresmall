@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tireshoppingmall.home.admin.board.SearchDTO;
 import com.tireshoppingmall.home.admin.AdminMenuSession;
@@ -68,6 +69,14 @@ public class AdminOrderController {
 	public String pagingOrder(HttpServletRequest req, @RequestParam int p) {
 		System.out.println(p);
 		oDAO.getOrder(p, req);
+		req.setAttribute("contentPage", "order/order.jsp");
+		return "admin/master";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/order.get", method = RequestMethod.GET, produces="application/json; charset=utf-8")
+	public String getOrder(HttpServletRequest req) {
+		
 		req.setAttribute("contentPage", "order/order.jsp");
 		return "admin/master";
 	}

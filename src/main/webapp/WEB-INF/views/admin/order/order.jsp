@@ -201,8 +201,8 @@
 						<c:forEach var="o" items="${orders }" varStatus="status">
 								<tr class="order_modal_go">
 									<td class="td_c1">${status.count }
-										<%-- <input name="o_no" value="${o.o_no }" id="orderInput_M" type="hidden">
-										<input name="o_step" value="${o.o_step }" id="orderStep_M" type="hidden">
+										 <input name="o_no" value="${o.o_no }" id="orderInput_M" type="hidden">
+										<%--<input name="o_step" value="${o.o_step }" id="orderStep_M" type="hidden">
 										<input name="o_tireinstalldate" value="${o.o_tireinstalldate }" id="tireInstallDate_M" type="hidden">
 										<input name="ti_id" id="tireNo_M" type="hidden">
 										<input name="ti_name" id="tireName_M" type="hidden">

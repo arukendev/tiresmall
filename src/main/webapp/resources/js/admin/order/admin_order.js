@@ -18,13 +18,22 @@ $("#datepicker" ).datepicker({
 
 
 $('.order_modal_go').click(function() {
-
+	const o_no = $("#orderInput_M").val();
 	$('#order_modal').show();
 	$('#order_modal').css('z-index', '3');
 	// 모달 on
 	
 	$("#update_modal").attr("action", "")
 	$("body").css("overflow", 'hidden');
+	
+	$.ajax({
+		type: "GET", //요청 메소드 방식
+		url: "order.get",
+		data: {o_no},
+		success : function(result){
+			
+		},
+	});
 
 })
 
